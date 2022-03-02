@@ -1,0 +1,6 @@
+[submodule "catalyst-rl-tutorial"]
+	path = catalyst-rl-tutorial
+	url = git@github.com:Vvlad1slavV/catalyst-rl-tutorial.git
+[submodule "PyRep"]
+	path = PyRep
+	url = git@github.com:stepjam/PyRep.git
