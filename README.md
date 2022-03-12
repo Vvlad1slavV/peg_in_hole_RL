@@ -11,7 +11,7 @@ wget https://coppeliarobotics.com/files/CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.x
 # or download from version  official 
 mkdir CoppeliaSim
 tar -xvf CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.xz -C ./CoppeliaSim --strip-components 1
-rm https://coppeliarobotics.com/files/CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.xz
+rm CoppeliaSim_Edu_V4_1_0_Ubuntu20_04.tar.xz
 ```
 3. Install [**MongoDB**](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/). This tutorial is compatible with the version 5.0.6 () 
 ```
@@ -22,7 +22,27 @@ sudo apt update
 sudo apt install -y mongodb-org
 ```
 
-4. Run training
+4. You need to install
+```
+python3.6
+python3.6-dev
+python3-virtualenv
+
+tmux
+
+gcc
+```
+
+
+5. Add the following to ~/.bashrc or ~/.zshrc: (NOTE: the 'EDIT ME' in the first line)
+```
+export COPPELIASIM_ROOT=EDIT/ME/PATH/TO/COPPELIASIM/INSTALL/DIR
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$COPPELIASIM_ROOT
+export QT_QPA_PLATFORM_PLUGIN_PATH=$COPPELIASIM_ROOT
+```
+Don't forget restart session.
+
+6. Run training
 ```
 cd catalyst-rl-tutorial
 scripts/run-training.sh
